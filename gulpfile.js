@@ -10,7 +10,7 @@ let gulpSourcemaps = require('gulp-sourcemaps');
   gulp.task('browser-sync', _task_browserSync);
   gulp.task('styles', _task_gulpSass);
 
-  gulp.task('default', gulp.series('styles', 'watch', 'browser-sync'))
+  gulp.task('default', gulp.series(gulp.parallel('styles', 'browser-sync', 'watch')))
 
   // // TASKS - FUNCTIONS
 
@@ -34,6 +34,6 @@ let gulpSourcemaps = require('gulp-sourcemaps');
   }
 
   function _task_Watch() {
-    gulp.watch("./assets/sass/**/*.scss", ['styles'], browserSync.reload);
+    gulp.watch("./source/sass/**/*.scss", gulp.parallel('styles'), browserSync.reload);
     gulp.watch("./*.html").on('change', browserSync.reload);
   }
