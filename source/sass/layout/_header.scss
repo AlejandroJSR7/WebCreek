@@ -12,25 +12,25 @@ header {
     font-size: 1rem;
     font-weight: 500;
     ul {
+      column-gap: 20px;
       display: inline-grid;
+      grid-auto-flow: column dense;
       list-style-type: none;
       margin: 0;
       padding: 0;
-      column-gap: 20px;
-      grid-auto-flow: column dense;
       li {
         align-items: center;
         border-bottom: 3px solid transparent;
         display: flex;
-        height: 60px;
         font-weight: 400;
+        height: 60px;
         [class^="mxicon-"] {
           margin-right: 7px;
         }
         &:hover {
-          cursor: pointer;
-          color: $color-highlighted;
           border-bottom: 3px solid $color-highlighted;
+          color: $color-highlighted;
+          cursor: pointer;
           .mxicon--dashboard {
             background-image: url('../images/design/icons/icon-dashboard-hover.svg');
           }
@@ -41,10 +41,42 @@ header {
       }
     }
   }
+  .nav-user {
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    ul {
+      column-gap: 20px;
+      display: inline-grid;
+      grid-auto-flow: column dense;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        align-items: center;
+        display: flex;
+        height: 60px;
+      }
+      .mxicon--exit:hover {
+        background-image: url('../images/design/icons/icon-exit-hover.svg');
+        cursor: pointer;
+      }
+      img.nav-user__avatar {
+        border-radius: 50%;
+        border: 2px solid $color-highlighted;
+        display: inline-block;
+        height: 40px;
+        object-fit: cover;
+        width: 40px;
+      }
+    }
+  }
+
   .header__logo {
     flex-basis: 200px;
   }
   .header__nav {
+    display: flex;
     flex: 1;
   }
 }
