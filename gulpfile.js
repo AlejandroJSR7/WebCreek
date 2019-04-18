@@ -10,7 +10,7 @@ let gulpSourcemaps = require('gulp-sourcemaps');
   gulp.task('browser-sync', _task_browserSync);
   gulp.task('styles', _task_gulpSass);
 
-  gulp.task('default', gulp.series(gulp.parallel('styles', 'browser-sync', 'watch')))
+  gulp.task('default', gulp.series(gulp.parallel('styles', 'browser-sync', 'watch')));
 
   // // TASKS - FUNCTIONS
 
