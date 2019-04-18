@@ -1,7 +1,9 @@
-let gulp = require('gulp');
-let browserSync = require('browser-sync');
-let gulpSass = require('gulp-sass');
-let gulpSourcemaps = require('gulp-sourcemaps');
+let gulp = require('gulp'),
+    browserSync = require('browser-sync'),
+    gulpSass = require('gulp-sass'),
+    gulpSourcemaps = require('gulp-sourcemaps')
+    gulpImagemin = require('gulp-imagemin')
+  ;
 
 
   // // TASKS - LIST
@@ -9,10 +11,17 @@ let gulpSourcemaps = require('gulp-sourcemaps');
   gulp.task('watch', _task_Watch);
   gulp.task('browser-sync', _task_browserSync);
   gulp.task('styles', _task_gulpSass);
+  gulp.task('imagemin', _task_gulpImagemin);
 
   gulp.task('default', gulp.series(gulp.parallel('styles', 'browser-sync', 'watch')));
 
   // // TASKS - FUNCTIONS
+
+  function _task_gulpImagemin() {
+    return gulp.src('./source/images/**/**/**')
+      .pipe(gulpImagemin())
+      .pipe(gulp.dest('./dist/images/'))
+  }
 
   function _task_gulpSass() {
     console.log('_task_gulpSass');
