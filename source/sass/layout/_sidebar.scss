@@ -30,17 +30,20 @@
 .sidebar-toggle {
   background-color: $color-main_c;
   border-radius: 2px;
-  outline: none;
   border: 0;
   cursor: pointer;
   height: 54px;
   margin: 0;
+  outline: none;
   padding: 0;
   position: absolute;
   right: -8px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 20px;
   width: 17px;
+  @media (min-width: 992px) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 .sidebar-toggle:before {
   background-color: $color-main;

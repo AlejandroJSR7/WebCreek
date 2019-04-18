@@ -3,7 +3,10 @@
 main {
   background-color: $color-main_b;
   flex: 1;
-  padding: 40px 25px 20px
+  padding: 40px 25px 20px;
+  @media (min-width: 992px) {
+    padding: 40px 50px 20px;
+  }
 }
 
 .main__title {

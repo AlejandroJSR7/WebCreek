@@ -5,8 +5,13 @@ header {
   background-color: $color-main;
   box-shadow: 0 3px 6px 0 $color-shadow;
   display: flex;
-  height: 60px;
-  padding: 0 25px;
+  flex-wrap: wrap;
+  padding: 20px 25px 0;
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+    height: 60px;
+    padding: 5px 25px 5px;
+  }
   .nav-header-items {
     color: $color-white;
     font-size: 1rem;
@@ -18,12 +23,17 @@ header {
       list-style-type: none;
       margin: 0;
       padding: 0;
+      @media (min-width: 768px) {}
       li {
         align-items: center;
         border-bottom: 3px solid transparent;
         display: flex;
         font-weight: 400;
-        height: 60px;
+        padding: 10px 0 20px;
+        @media (min-width: 768px) {
+          height: 60px;
+          padding: 0;
+        }
         [class^="mxicon-"] {
           margin-right: 7px;
         }
@@ -42,9 +52,13 @@ header {
     }
   }
   .nav-user {
+    order: 2;
     align-items: center;
     display: flex;
     margin-left: auto;
+    @media (min-width: 768px) {
+      order: initial;
+    }
     ul {
       column-gap: 20px;
       display: inline-grid;
@@ -55,7 +69,9 @@ header {
       li {
         align-items: center;
         display: flex;
-        height: 60px;
+        @media (min-width: 768px) {
+          height: 60px;
+        }
       }
       .mxicon--exit:hover {
         background-image: url('../images/design/icons/icon-exit-hover.svg');
@@ -73,10 +89,25 @@ header {
   }
 
   .header__logo {
-    flex-basis: 200px;
+    display: flex;
+    order: 1;
+    @media (min-width: 768px) {
+      flex-basis: 220px;
+      order: initial;
+    }
   }
   .header__nav {
     display: flex;
     flex: 1;
+    flex-basis: 100%;
+    justify-content: center;
+    order: 3;
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+      order: initial;
+    }
+    @media (min-width: 992px) {
+      padding-left: 50px;
+    }
   }
 }

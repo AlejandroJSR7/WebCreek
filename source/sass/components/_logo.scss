@@ -2,10 +2,13 @@
 
 .logo-maxwell {
   align-items: center;
-  display: flex;
+  display: inline-flex;
   line-height: 1;
   margin: 0;
   padding: 0;
+  @media (min-width: 768px) {
+    display: flex;
+  }
   img {
     height: $logo-main-h;
     width: $logo-main-w;
