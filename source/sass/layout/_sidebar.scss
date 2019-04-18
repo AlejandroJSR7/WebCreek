@@ -29,6 +29,7 @@
 
 .sidebar-toggle {
   background-color: $color-main_c;
+  border-radius: 2px;
   outline: none;
   border: 0;
   cursor: pointer;
@@ -51,4 +52,15 @@
   top: 50%;
   transform: translate(-50%, -50%);
   width: 4px;
+}
+
+.sidebar-hide {
+  flex-basis: 0%!important;
+  width: 0px;
+  nav {
+    display: none;
+  }
+  .sidebar-toggle {
+    right: -12px;
+  }
 }

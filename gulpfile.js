@@ -2,7 +2,8 @@ let gulp = require('gulp'),
     browserSync = require('browser-sync'),
     gulpSass = require('gulp-sass'),
     gulpSourcemaps = require('gulp-sourcemaps')
-    gulpImagemin = require('gulp-imagemin')
+    gulpImagemin = require('gulp-imagemin'),
+    gulpUglify = require('gulp-uglify')
   ;
 
 
@@ -12,10 +13,17 @@ let gulp = require('gulp'),
   gulp.task('browser-sync', _task_browserSync);
   gulp.task('styles', _task_gulpSass);
   gulp.task('imagemin', _task_gulpImagemin);
+  gulp.task('uglify', _task_gulpUglify);
 
   gulp.task('default', gulp.series(gulp.parallel('styles', 'browser-sync', 'watch')));
 
   // // TASKS - FUNCTIONS
+
+  function _task_gulpUglify() {
+    return gulp.src('./source/scripts/maxwell.js')
+    gulpUglify()
+    .pipe(gulp.dest('./dist/scripts/'))
+  }
 
   function _task_gulpImagemin() {
     return gulp.src('./source/images/**/**/**')
@@ -43,6 +51,7 @@ let gulp = require('gulp'),
   }
 
   function _task_Watch() {
+    gulp.watch("./source/scripts/**/*.js", gulp.parallel('uglify'), browserSync.reload);
     gulp.watch("./source/sass/**/*.scss", gulp.parallel('styles'), browserSync.reload);
     gulp.watch("./*.html").on('change', browserSync.reload);
   }
