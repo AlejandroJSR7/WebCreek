@@ -2,6 +2,7 @@
 
 .sidebar {
   background-color: $color-main_c;
+  box-shadow: 3px 0 6px 0 $color-shadow;
   flex-basis: 240px;
 
   nav {

@@ -1,1 +1,42 @@
 // ./components/_card-link.scss
+
+
+.cards-links {
+  display: grid;
+  grid-template-columns: repeat(5, 82px);
+  list-style-type: none;
+  column-gap: 35px;
+  row-gap: 60px;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.card-link {
+  cursor: pointer;
+  max-width: 82px;
+  .card-link__icon {
+    align-items: center;
+    background-color: white;
+    border-radius: 7px;
+    color: $color-main;
+    display: flex;
+    font-weight: 400;
+    height: 82px;
+    justify-content: center;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    text-align: center;
+    transition: opacity 0.5s ease;
+    width: 82px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  span {
+    display: inline-block;
+    font-size: 14px;
+    max-width: 100%;
+  }
+  a { text-decoration: none; }
+}
