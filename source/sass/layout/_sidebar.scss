@@ -14,9 +14,11 @@
       li {
         font-weight: 100;
         margin-bottom: 15px;
+        opacity: 0.75;
         &:hover {
-          font-weight: 500;
-          padding-left: 1px;
+          // font-weight: 400;
+          opacity: 1;
+          // padding-left: 1px;
         }
       }
       a {

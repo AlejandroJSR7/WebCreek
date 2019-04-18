@@ -27,15 +27,16 @@
     margin-bottom: 10px;
     opacity: 0.9;
     text-align: center;
-    transition: opacity 0.5s ease;
+    transition: all 0.5s ease;
     width: 82px;
     &:hover {
       opacity: 1;
+      background-color: $color-highlighted;
     }
   }
   span {
     display: inline-block;
-    font-size: 14px;
+    font-size: 0.9rem;
     max-width: 100%;
   }
   a { text-decoration: none; }
