@@ -1,26 +1,27 @@
-let gulp = require('gulp'),
-    browserSync = require('browser-sync'),
-    gulpSass = require('gulp-sass'),
-    gulpSourcemaps = require('gulp-sourcemaps')
-  ;
+let gulp = require('gulp');
+let browserSync = require('browser-sync');
+let gulpSass = require('gulp-sass');
+let gulpSourcemaps = require('gulp-sourcemaps');
 
 
   // // TASKS - LIST
 
-  gulp.task('default', ['styles', 'watch', 'browser-sync'])
   gulp.task('watch', _task_Watch);
   gulp.task('browser-sync', _task_browserSync);
   gulp.task('styles', _task_gulpSass);
 
+  gulp.task('default', gulp.series('styles', 'watch', 'browser-sync'))
+
   // // TASKS - FUNCTIONS
 
   function _task_gulpSass() {
-    console.log('Estilos');
+    console.log('_task_gulpSass');
     return gulp.src('./source/sass/**/*.scss')
       .pipe(gulpSourcemaps.init())
       .pipe(gulpSass().on('error', gulpSass.logError))
+      .pipe(gulpSass({outputStyle: 'compressed'}))
       .pipe(gulpSourcemaps.write())
-      .pipe(gulp.dest('./assets/css'))
+      .pipe(gulp.dest('./dist/css'))
       .pipe(browserSync.stream());
   } 
 
