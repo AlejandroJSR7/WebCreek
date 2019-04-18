@@ -1,1 +1,50 @@
 // ./layout/_header.scss
+
+header {
+  align-items: center;
+  background-color: $color-main;
+  box-shadow: 0 3px 6px 0 $color-shadow;
+  display: flex;
+  height: 60px;
+  padding: 0 25px;
+  .nav-header-items {
+    color: $color-white;
+    font-size: 1rem;
+    font-weight: 500;
+    ul {
+      display: inline-grid;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      column-gap: 20px;
+      grid-auto-flow: column dense;
+      li {
+        align-items: center;
+        border-bottom: 3px solid transparent;
+        display: flex;
+        height: 60px;
+        font-weight: 400;
+        [class^="mxicon-"] {
+          margin-right: 7px;
+        }
+        &:hover {
+          cursor: pointer;
+          color: $color-highlighted;
+          border-bottom: 3px solid $color-highlighted;
+          .mxicon--dashboard {
+            background-image: url('../images/design/icons/icon-dashboard-hover.svg');
+          }
+          .mxicon--indicators {
+            background-image: url('../images/design/icons/icon-indicators-hover.svg');
+          }
+        }
+      }
+    }
+  }
+  .header__logo {
+    flex-basis: 200px;
+  }
+  .header__nav {
+    flex: 1;
+  }
+}

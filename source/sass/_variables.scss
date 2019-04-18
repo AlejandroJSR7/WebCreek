@@ -7,9 +7,14 @@
   $font-base-size: 16px;
 
 // Colors
-  $color_main:        #4A0089;
-  $color_main_b:      #33005F;
-  $color_main_c:      #240043;
-  $color_highlighted: #F4BB00;
-  $color_white:       #FFFFFF;
-  $color_black:       #000000;
+  $color-main:        #4A0089;
+  $color-main_b:      #33005F;
+  $color-main_c:      #240043;
+  $color-highlighted: #F4BB00;
+  $color-white:       #FFFFFF;
+  $color-black:       #000000;
+  $color-shadow:        rgba($color-black, 0.16);
+
+// Logo - Size
+  $logo-main-h: auto;
+  $logo-main-w: 130px;

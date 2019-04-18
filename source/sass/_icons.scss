@@ -1,0 +1,19 @@
+// ./_icons.scss
+
+[class^="mxicon-"] {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+}
+
+.mxicon--dashboard {
+  background-image: url('../images/design/icons/icon-dashboard-white.svg');
+  height: 20px;
+  width: 20px;
+}
+.mxicon--indicators {
+  background-image: url('../images/design/icons/icon-indicators-white.svg');
+  height: 21px;
+  width: 18px;
+}
