@@ -1,4 +1,7 @@
 // ./_base.scss
+html {
+  font-size: $font-base-size;
+}
 body {
   font-family: $font-family-base;
 }
