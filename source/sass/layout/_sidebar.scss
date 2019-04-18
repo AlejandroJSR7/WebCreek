@@ -1,1 +1,27 @@
 // ./layout/_sidebar.scss
+
+.sidebar {
+  background-color: $color-main_c;
+  flex-basis: 240px;
+
+  nav {
+    padding: 40px 25px 20px;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        font-weight: 100;
+        margin-bottom: 15px;
+        &:hover {
+          font-weight: 500;
+          padding-left: 1px;
+        }
+      }
+      a {
+        color: $color-white;
+        text-decoration: none;
+      }
+    }
+  }
+}
